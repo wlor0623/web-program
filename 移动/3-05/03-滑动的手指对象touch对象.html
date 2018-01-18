@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .box {
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+        box-sizing: border-box;
+        border: 5px solid #0f0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        位置位置位置位置位置位置位置
+    </div>
+    <script>
+    var box = document.querySelector('.box');
+    // 实现一个div的拖动（拖拽）
+    // 在滑动开始的时候记录滑动开始的手指的坐标 X 和 Y的坐标
+    // 在滑动的时候 记录手指的X 和 Y的坐标
+    // 用滑动时候的X 和 Y - 滑动开始的X和Y 计算出手指移动的距离
+    // 把手指移动的距离设置div位移上
+    // 滑动开始X 滑动开始Y 滑动中的X 滑动中的Y 滑动距离X  滑动距离Y
+    var startX = startY= moveX = moveY=distanceX=distanceY=0;
+    box.addEventListener('touchstart', function(e) {
+        /*	e.touches[0] 是touch对象 手指对象 第一个手指
+        	手指对象里面的属性
+        		1. clientX  clientY 记录手指距离视口左上角的X和Y的距离）
+        		2. pageX pageY 记录手指距离元素左上角的X和Y的距离（会包含滚动条）
+        		3. screenX  screenY 记录手指距离屏幕左上角的X和Y距离
+        		移动端要做滑动不会有滚动条一般用client 或者page系列 clientX */
+        	// 滑动开始的X和Y的值
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    });
+    box.addEventListener('touchmove', function(e) {
+    	// 滑动中的X和Y的值
+        moveX = e.touches[0].clientX;
+        moveY = e.touches[0].clientY;
+        // 滑动的水平的距离
+        distanceX = moveX - startX;
+        // 滑动的垂直距离
+        distanceY = moveY  - startY;
+        //把滑动的距离设置到div上
+        box.style.transform = 'translate('+distanceX+'px,'+distanceY+'px)';
+
+        // 手指移动了多远 div就跟着走多远
+    })
+    </script>
+</body>
+
+</html>

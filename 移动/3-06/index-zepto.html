@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/swiper/css/swiper.css">
+    <!-- 1. 引入index.less  注意rel="stylesheet/less"-->
+    <link rel="stylesheet/less" href="less/index.less">
+    <!-- 2. 引入less.js编译器文件 -->
+    <script src="lib/less/less.js"></script>
+    <!-- 3. 用服务器打开网页 -->
+</head>
+
+<body>
+    <!-- 京东主体布局容器  通常都是640px的最大宽度  最小宽度300px-->
+    <div class="layout">
+        <!-- 顶部通栏 -->
+        <header id="topbar">
+            <!-- logo图标 精灵图 -->
+            <i class="icon-logo">
+                    
+                </i>
+            <form action="#">
+                <!-- 搜索图标 -->
+                <i class="icon-search"></i>
+                <!-- 输入框 -->
+                <input type="text" placeholder="请输入要搜索的商品">
+            </form>
+            <!-- 登录 -->
+            <a href="#" class="login">登录</a>
+        </header>
+        <!-- 轮播图 -->
+        <section id="slide">
+            <!-- 轮播图图片 -->
+            <ul class="clearfix">
+                <li>
+                    <a href="#"><img src="images/l8.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l1.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l2.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l3.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l4.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l5.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l6.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l7.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l8.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l1.jpg" alt=""></a>
+                </li>
+            </ul>
+            <!-- 轮播图的小圆点 -->
+            <ul class="clearfix">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+        <!-- 导航菜单 -->
+        <nav id="nav">
+            <ul class="clearfix">
+                <li>
+                    <a href="#">
+                        <img src="images/nav0.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav1.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav2.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav3.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav4.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav5.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav6.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav7.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 主体商品 -->
+        <main id="products">
+            <!-- 秒杀商品 -->
+            <div class="seckill">
+                <!-- 秒杀标题 -->
+                <div class="seckill-title">
+                    <!-- 闹钟图标 -->
+                    <div class="seckill-clock">
+                        <img src="images/seckill-icon.png" alt="">
+                    </div>
+                    <!-- 掌上秒杀 -->
+                    <div class="seckill-hand">掌上秒杀</div>
+                    <!-- 秒杀倒计时 -->
+                    <div class="seckill-count-down">
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                    <div class="seckill-more">更多</div>
+                </div>
+                <!-- 秒杀商品内容 -->
+                <div class="seckill-body">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">
+                                <img src="images/detail01.jpg" alt="">
+                                <p>￥10.00</p>
+                                <p>￥1000.00</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/detail01.jpg" alt="">
+                                <p>￥10.00</p>
+                                <p>￥1000.00</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/detail01.jpg" alt="">
+                                <p>￥10.00</p>
+                                <p>￥1000.00</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 京东超市 -->
+            <div class="jd-market">
+                <div class="jd-market-title">
+                    <h4>京东超市</h4>
+                </div>
+                <div class="jd-market-body clearfix">
+                    <a href="#" class="pull-left br">
+                        <img src="images/cp1.jpg" alt="">
+                    </a>
+                    <a href="#" class="pull-right">
+                        <img src="images/cp2.jpg" alt="" class="bb">
+                        <img src="images/cp3.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- 京东超市 -->
+            <div class="jd-market">
+                <div class="jd-market-title">
+                    <h4>京东超市</h4>
+                </div>
+                <div class="jd-market-body clearfix">
+                    <a href="#" class="pull-right bl">
+                        <img src="images/cp4.jpg" alt="">
+                    </a>
+                    <a href="#" class="pull-left">
+                        <img src="images/cp5.jpg" alt="" class="bb">
+                        <img src="images/cp6.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- 京东超市 -->
+            <div class="jd-market">
+                <div class="jd-market-title">
+                    <h4>京东超市</h4>
+                </div>
+                <div class="jd-market-body clearfix">
+                    <a href="#" class="pull-left br">
+                        <img src="images/cp1.jpg" alt="">
+                    </a>
+                    <a href="#" class="pull-right">
+                        <img src="images/cp2.jpg" alt="" class="bb">
+                        <img src="images/cp3.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- 1. 引入zepto的JS文件 -->
+    <!-- <script src="lib/zepto-js/zepto.min.js"></script> -->
+    <!-- 2. 引入jquery的扩展选择器包 -->
+    <!-- <script src="lib/zepto-js/selector.js"></script> -->
+    <!-- 3. 引入动画的扩展包 -->
+    <!-- <script src="lib/zepto-js/fx.js"></script> -->
+    <!-- 4. 引入滑动的扩展包 -->
+    <!-- <script src="lib/zepto-js/touch.js"></script> -->
+    <script src="lib/zepto-js/定制版zepto/zepto.min.js"></script>
+    <script>
+    $(function() {
+        // 定义索引
+        var index = 1;
+        var timeId = null;
+        //获取轮播图ul
+        // zepto底层是用 document.querySelector选择器获取元素的 里面不能写eq  eq是jquery的需要引入jquery的扩展选择器包;
+        var slideUl = $('#slide ul:eq(0)')
+        var slideWidth = $('#slide').width();
+
+        function startTime() {
+            // 开启时钟
+            timeId = setInterval(function() {
+                // 索引++ 
+                index++;
+                //设置轮播图ul的动画（位移）
+                /*第一个参数是对象是动画的属性 
+                第二个参数的动画执行的时间
+                第三个参数是动画执行速度函数
+                第四个参数的动画执行完毕的回调函数*/
+                setAnimate();
+            }, 1000);
+        }
+        startTime();
+
+        function setAnimate() {
+            slideUl.animate({
+                'transform': 'translateX(' + (-index * slideWidth) + 'px)'
+            }, 400, 'ease-out', function() {
+                //动画执行完毕就会执行的回调函数 相当于过渡完成事件一样
+                if (index >= 9) {
+                    index = 1;
+                    //迅速回去不需要动画 只要设置杨样式回去就可以
+                    slideUl.css('transform', 'translateX(' + (-index * slideWidth) + 'px)');
+                }
+                if (index <= 0) {
+                    index = 8;
+                    //迅速回去不需要动画 只要设置杨样式回去就可以
+                    slideUl.css('transform', 'translateX(' + (-index * slideWidth) + 'px)');
+                }
+            })
+        }
+        //swipeLeft zepto封装的事件
+        slideUl.on('swipeLeft', function() {
+            clearInterval(timeId);
+            // console.log('从右往左滑的事件'); 
+            // 从右往左滑 切换到下一张 index++
+            index++;
+            setAnimate();
+            startTime();
+        });
+        slideUl.on('swipeRight', function() {
+            clearInterval(timeId)
+                // console.log('从做往右滑的事件'); 
+                //从左往右滑切换到上一张 index--
+            index--;
+            setAnimate();
+            startTime();
+        });
+        // 在事件里面无缝获取滑动中的距离 预览效果无法实现（单独用原生JS的touchmove写）
+    });
+    </script>
+</body>
+
+</html>

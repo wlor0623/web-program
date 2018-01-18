@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    	.mobileImg img{
+    		width: 100%;
+    	}
+    </style>
+</head>
+
+<body>
+    <!-- 轮播图容器 -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 轮播图的小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- li是每一个小圆点 -->
+            <!-- 	data-target指定小圆点要控制的轮播图容器 选择器 只能控制一个轮播图 
+        	data-slide-to="0" 指定切换哪一张图 轮播图的索引 从0开始 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- 轮播图的所有轮播图项 -->
+        <div class="carousel-inner" role="listbox">
+            <!-- item代表每一项轮播图 -->
+            <!-- active表示当前正在显示的轮播图 有且只能有一个 -->
+            <div class="item active">
+            	<!-- 移动端轮播图是插入小图而且需要等比例缩放 只能使用图片标签 -->
+                <a href="#" class="mobileImg">
+                		<img src="img/slide_01_640x340.jpg" alt="">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="mobileImg">
+                		<img src="img/slide_02_640x340.jpg" alt="">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="mobileImg">
+                		<img src="img/slide_03_640x340.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- 控制器 左右箭头 -->
+        <!-- 左键头 通过href指定轮播图容器的选择器  data-slide="prev" 切换到上一张-->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <!-- 右箭头 data-slide="next"切换到下一张-->
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

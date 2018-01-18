@@ -1,0 +1,246 @@
+/* 导入公共样式base.less */
+@import 'base.less';
+
+/* 京东全局颜色 */
+@main-color:#d8505c;
+
+/* 京东主体布局容器 */
+.layout{
+	width: 100%;
+	max-width: 640px;
+	min-width: 300px;
+	height: 2000px;
+	background-color: #ccc;
+	margin: 0px auto;
+}
+
+#topbar{
+	position: fixed;
+	z-index: 999;
+/* 固定定位的宽度100%是相对于整个屏幕 和父元素最大宽度限制没有关系 */
+	width: 100%;
+	/* 再单独给顶部通栏限制最大宽度 */
+	max-width:640px;
+	.icon-logo{
+		width: 60px;
+		height: 23px;
+		position: absolute;
+		left: 10px;
+		top: 8px;
+		/* background-image: url(../images/sprites.png);
+		background-size: 200px 200px;
+		background-position: 0 -110px; */
+		background: url(../images/sprites.png)  no-repeat 0px -110px;
+		background-size: 200px 200px;
+	}
+	>form{
+		.icon-search{
+			position: absolute;
+			left: 75px;
+			top: 10px;
+			width: 23px;
+			height: 23px;
+			background-image: url(../images/sprites.png);
+			background-size: 200px 200px ;
+			background-position: -60px -110px;
+		}
+		margin-left: 70px;
+		margin-right: 60px;
+		>input{
+			width: 100%;
+			height: 30px;
+			border-radius: 30px;
+			margin-top: 5px;
+			padding-left: 30px;
+		}
+	}
+	.login{
+		width: 60px;
+		position: absolute;
+		right: 0;
+		top: 8px;
+		color:#fff;
+		text-align: center;
+	}
+}
+
+/* 轮播图区域 */
+#slide{
+	overflow: hidden;
+	position: relative;
+	/* 轮播图图片 */
+	>ul:first-of-type{
+		/* 相对于slide整个页面的宽度的10倍 也就是一张图宽度的10倍 */
+		width: 1000%;
+		transform:translateX(-10%);
+		>li{
+			/* 相对于ul 是ul的1/10 也就相当于一张图片的宽度 */
+			width: 10%;
+			float: left;
+			>a{
+				display: block;
+				>img{
+					width: 100%;
+				}
+			}
+		}
+	}
+	/* 小圆点 */
+	>ul:last-of-type{
+		position: absolute;
+		bottom: 10px;
+		left:50%;
+		transform:translateX(-50%);
+		>li{
+			width: 6px;
+			height: 6px;
+			border-radius:3px;
+			border:1px solid #fff;
+			float: left;
+			margin-left: 10px;
+			&.active{
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+/* 导航菜单 */
+#nav{
+	padding: 10px;
+	background-color: #fff;
+	>ul{
+		>li{
+			width: 25%;
+			float: left;
+			>a{
+				text-align: center;
+				display: block;
+				>img{
+					width: 40px;
+					height: 40px;
+				}
+				>p{
+					color:#666;
+					font-size: 12px;
+					margin:5px 0;
+				}
+			}
+		}
+	}
+}
+
+/* 商品区域 */
+#products{
+	padding: 5px;
+	/* 秒杀商品 */
+	.seckill{
+		background-color: #fff;
+		margin-top: 20px;
+		border-radius:5px;
+		.seckill-title{
+			position: relative;
+			height: 40px;
+			line-height: 40px;
+			>div{
+				float: left;
+				margin-left: 10px;
+			}
+			.seckill-clock{
+				>img{
+					width: 20px;
+					height: 25px;
+					position: absolute;
+					top: 8px;
+				}
+			}
+			.seckill-hand{
+				margin-left: 40px;
+				font-size: 14px;
+				color:@main-color;
+			}
+			.seckill-count-down{
+				>span{
+					display: inline-block;
+					text-align: center;
+					width: 15px;
+					height: 15px;
+					line-height: 15px;
+					background-color: #000;
+					color:#fff;
+					&:nth-of-type(3n){
+						background-color: #fff;
+						color:#000;
+					}
+				}
+			}
+			.seckill-more{
+				float: right;
+				margin-right: 10px;				
+			}
+		}
+		.seckill-body{
+			>ul{
+				>li{
+					width: 33.33%;
+					float: left;
+					border-left: 1px solid #ccc;
+					&:first-of-type{
+						border-left: 0;
+					}
+					>a{
+						display: block;
+						text-align: center;
+						>img{
+							width: 60%;
+						}
+						>p{
+							font-size: 12px;
+							&:first-of-type{
+								color:@main-color;
+							}
+							&:last-of-type{
+								/* 中划线 */
+								color:#666;
+								text-decoration: line-through;
+							}	
+						}
+					}
+				}
+			}
+		}
+	}
+	/* 京东超市 */
+	.jd-market{
+		background-color: #fff;
+		border-radius:5px;
+		margin-top: 20px;
+		.jd-market-title{
+			>h4{
+				padding-left: 30px;
+				font-weight: normal;
+				position: relative;
+				line-height: 40px;
+				border-bottom: 1px solid #ccc;
+				/* border-left: 4px solid @main-color; */
+				&::before{
+					content: '';
+					width: 4px;
+					height: 15px;
+					background-color: @main-color;
+					position: absolute;
+					left: 20px;
+					top: 13px;
+				}
+			}
+		}
+		.jd-market-body{
+			>a{
+				width: 50%;
+				>img{
+					width: 100%;
+				}
+			}
+		}
+	}
+}

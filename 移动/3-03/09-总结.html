@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	1. 引包
+		1. 引入bootstrap.css
+		2. 引入jquery
+		3. 引入Bootstrap.js
+	2. 媒体查询
+		1. @media(条件（min-width 屏幕宽度大于等于某个值 ）(max-width 屏幕宽度小于等于某个值))
+		2. 向上兼容向下覆盖 用min-width从小到大写 使用max-width从大到小写
+	3. 视口 解决移动端网页缩放
+		meta:vp
+	4. 版心容器  》 全局CSS样式 container居中 container-fluid 全屏
+	5. 栅格系统 》 全局CSS样式 .row 行 col列 4个档次 col-lg 大 col-md 中 col-sm 小 col-xs 超小 一行总共12列  分3列 4份 4列 3份 2列 6份 1列 12份
+	6. bootstrap的字体图标 》 组件 》 字体图标
+	7. 文本居中 》 全局CSS样式 》 排班 》 对齐
+	8. 文本颜色 》 全局CSS样式 》 辅助类 》 情景文本颜色
+
+
+	1. 字体图标 自己生成的字体图标》
+		1. 进入网站
+		2. 点击右上角app
+		3. 导入图标
+		4. 选中图标
+		5. 右下角生成图标
+		6. download下载
+		7. 使用生成好的图标 引入style.css(图标的类名) 把fonts字体文件放到旁边
+	2. 使用微金所图标 拷贝完整版的font.css和fonts文件夹 在主页引入font.css 使用对应的类名
+	3. less的预处理器（预编译器）： 是一个比CSS更强大高级的语言 完全兼容并且扩展CSS支持定义变量 混入 函数 嵌套 导入
+	4. 使用less.js编译less文件
+		1. 引入less文件 rel="stylesheet/less"
+		2. 引入less.js文件 脚本 
+		3. 用服务器打开网页
+	5. 写顶部通栏样式
+	6. 使用bootstrap导航条 》 组件 》 导航条 》 默认样式导航条
+	7. 导航条样式修改 改高度 改里面的a的高度 line-height:50px; 加底部边框 去掉背景色
+	8. 轮播图插件的使用 》 JS插件 》 carousel
+	9. PC轮播图 使用背景图 背景居中高度固定
+	10. 移动轮播图 使用图片标签
+	11. 响应式轮播图 使用响应式工具 hidden-xs hidden-md hidden-lg hidden-sm 会造成资源加载问题
+	12. 使用JS实现响应式轮播图
+		1. 获取屏幕宽度判断是否大于640px
+		2. 如果大于就是大屏 获取所有item添加大图标签
+		3. 如果小于 就是小屏 获取所有item添加小图的标签
+		4. 大图和小图路径使用自定义属性存储 data-large-image存储大图 data-small-image存储小图注意 自定义属性或者任意属性名字不要大写
+		5. 在JS用data('属性名不带data-')获取图片路径
+
+		
+	1. 媒体对象 》 组件 》 媒体对象 调整文本颜色
+	2. 快速浮动 》 全局CSS样式 》 辅助类 》 快速浮动
+	3. 标签页 》 JS插件 》 标签页 标题页标题的样式修改
+	4. 标签页的内容 
+		1. 栅格系统 .col-md-4.col-sm-6.col-xs-12
+		2. 商品采用左边自适应右边固定的布局 右边使用浮动（右边的元素在前面放） 或者定位 左边的元素都要加margin-right把左边的元素变小
+		3. 栅格系统的列嵌套 col-xs-6
+		4. strong增强 sub 下标
+		5. 工具提示插件 》 JS插件 》 工具提示 注意要初始化插件才能有效果  
+			   $('[data-toggle="tooltip"]').tooltip()
+	5. 栅格系统 栅格系统的列偏移 col-md-offset-2
+	6. 标签页 在1份里面放标题 在7份放内容
+	7. calc()函数计算宽度
+	8. 模态框 》 JS插件 》 模态框
+	9. 表单 》 全局CSS样式 》 表单
+	10. 吸顶效果 》JS插件 》 affix
+	11. 添加局部滚动条
+		1. 要有一个父容器 加上overflow:auto
+		2. 要有一个子容器 子容器的宽度或者高度超过父容器
+	12. 定制 》 官网的定制按钮 》 定制一些变量或者栅格的列数等等
+</body>
+</html>

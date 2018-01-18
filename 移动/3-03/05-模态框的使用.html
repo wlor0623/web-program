@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+	<!-- data-toggle="modal" 控制开启模态框功能
+	data-target="#myModal" 指定要弹出的模态框 选择器 -->
+    <!-- 模态框的点击按钮 -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+    </button>
+    <!-- 模态框弹出的框框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            	<!-- 模态框头部 -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">登录哈哈哈哈哈哈</h4>
+                </div>
+                <!-- 模态框的身体 -->
+                <div class="modal-body">
+                    表单
+                </div>
+                <!-- 模态框的底部 -->
+                <div class="modal-footer">
+                	<!-- 关闭 -->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框 》 JS插件 》 模态框 -->
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

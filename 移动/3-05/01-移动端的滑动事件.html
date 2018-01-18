@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+    	margin: 0px;
+    	padding: 0px;
+    }
+    	.box{
+    		width: 150px;
+    		height: 150px;
+    		background-color: pink;
+    	}
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    盒子
+    </div>
+    <script>
+    /*		1. touchstart 触摸开始触发
+    2. touchmove 触摸中会触发 持续触发
+    3. touchend 触摸结束触发
+    4. touchcancel 触摸中断会触发(了解)
+    5. 注意这3个事件只能用addEventListener这个方法添加事件
+    */
+   var box = document.querySelector('.box');
+   // 当手指触摸到元素上就会触发(手点击到元素就会触发) 一次触摸触发
+   box.addEventListener('touchstart',function () {
+   	console.log('touchstart');
+   });
+   // 一些最新浏览器可以 但是大多都不可以
+   box.ontouchstart = function () {
+   	console.log('哈哈哈');
+   }
+   // 当手指在元素里面滑动的时候会触发的事件 会一直触发
+   box.addEventListener('touchmove',function () {
+   	console.log('touchmove');
+   });
+   //当手指在元素触摸并且松开手到时候触发的事件 一次触摸触发一次
+   box.addEventListener('touchend',function () {
+   	console.log('touchend');
+   });
+   //当触摸中断的时候会触发的事件 用得少（触摸的时候来了电话 会触发的事件）
+   box.addEventListener('touchcancel',function () {
+   	console.log('touchcancel');
+   })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+/* CSS约定 
+1. 最外层的选择器使用id来限定 优先级高方便覆盖bootstrap的样式
+2. 当使用标签选择器的时候尽量使用直接子代选择 > 避免误杀后面的元素
+ */
+
+
+/* 定义网站主题色变量 */
+
+@main-color: #e92322;
+
+/* 头部区域 */
+
+#header {
+    /* 顶部通栏 */
+    .topbar {
+        border-bottom: 1px solid #ccc;
+        .container {
+            .row {
+                /* 选中行下的列 不会误选到一些别的div */
+                >div {
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 12px;
+                    border-left: 1px solid #ccc;
+                    /* 选中第一列清空边框 */
+                    &:first-child {
+                        border-left: none;
+                    }
+                    .btn-danger {
+                        /* 调用主题色变量 */
+                        background-color: @main-color;
+                    }
+                    >a {
+                        >img {
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            top: 40px;
+                            z-index: 999;
+                            display: none;
+                        }
+                        &:hover {
+                            >img {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* 导航条 */
+    .navbar-default {    	
+        background-color: #fff;
+        /* 导航条的容器不能限定高度 因为在移动端高度是随着导航链接而变化的 */
+        /* height: 80px;		 */
+        /* 移动端的按钮 */
+        .navbar-toggle {
+            margin-top: 23px;
+        }
+        /* 品牌 */
+        .navbar-brand {
+            height: 80px;
+            line-height: 50px;
+            >i {
+                font-size: 30px;
+            }
+            .icon-icon {
+                color: @main-color;
+            }
+            .icon-logo {
+                color: #333;
+            }
+        }
+        /* 导航链接 */
+        .navbar-nav {
+            >li {
+                >a {
+                    line-height: 50px;
+                    &:hover {
+                        border-bottom: 2px solid @main-color;
+                    }
+                }
+                &.active {
+                    >a {
+                        background-color: #fff;
+                        border-bottom: 2px solid @main-color;
+                    }
+                }
+            }
+        }
+    }
+}

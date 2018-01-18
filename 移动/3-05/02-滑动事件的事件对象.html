@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .box {
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        盒子
+    </div>
+    <script>
+    // event 就是事件对象： 装了事件触发的一些信息
+    // 滑动事件有一个TouchEvnet 事件对象 滑动事件对象
+    var box = document.querySelector('.box');
+    // 当手指触摸到元素上就会触发(手点击到元素就会触发) 一次触摸触发
+    box.addEventListener('touchstart', function(e) {
+        // e : touchEvent 触摸事件对象 里面的常用属性
+        //   1.  e.touches : touchList对象 手指的集合对象(数组) 装了屏幕上所有的手指对象  获取第一个手指 e.touches[0]
+        // 2 . e.targetTouches touchList对象 手指的集合对象（数组） 装了元素上的所有手指对象 
+        // 3. changedTouches touchList对象 手指的集合对象（数组） 获取屏幕上手指改变后的对象  比如页面没有手指按下 突然按下3个手指 页面的手指数量从无到有 记录变化的手指对象 从有到无的变化 松开手的时候 会记录松开手的时候的手指对象
+        //4. e.touches 和 e.targetTouches 都是一样的用任意一个都可以 通常用在touchstart和touchmove事件里面 touchend里面无法使用（屏幕和元素上都没有手指）
+        // e.changedTouches 可以记录从有到无的手指 在touchend事件里面可以记录松开手一瞬间那个手指对象
+        console.log(e);        
+        console.log(e.touches);        
+    });
+    // 当手指在元素里面滑动的时候会触发的事件 会一直触发
+    box.addEventListener('touchmove', function(e) {
+        console.log('touchmove');
+        console.log(e.touches);        
+    });
+    //当手指在元素触摸并且松开手到时候触发的事件 一次触摸触发一次
+    box.addEventListener('touchend', function(e) {
+        console.log('touchend'); 
+        console.log(e.changedTouches);   
+    });
+    </script>
+</body>
+
+</html>

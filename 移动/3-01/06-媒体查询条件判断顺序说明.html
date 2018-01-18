@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /* 	媒体查询的写法顺序： 
+		1. 使用min-width作为条件判断的时候条件从小到大写
+		2. 使用max-width作为条件判断的时候条件要从大到小写 */
+	/*能满足一个媒体查询的特性
+		1. 向下覆盖 当同时写了小屏幕的条件和大屏幕的条件的时候 大屏幕的条件的样式写在后面把小屏幕判断的样式覆盖
+		2. 向上兼容： 当没有写大屏幕条件判断时候 小屏幕写的判断也会在大屏生效*/
+    /*1300满足 大于1200 肯定也满足大于768px*/
+     @media(min-width: 768px) {
+        body {
+            background-color: blue;
+        }
+    }
+
+    @media(min-width: 992px) {
+        body {
+            background-color: green;
+        }
+    }
+    
+   /* @media(min-width: 1200px) {
+        body {
+            background-color: red;
+        }
+    } */
+    /*1100px 《 1200px  700 < 1200px*/
+    
+    /*@media(max-width: 1200px) {
+        body {
+            background-color: red;
+        }
+    }
+    
+    @media(max-width: 992px) {
+        body {
+            background-color: green;
+        }
+    }
+    
+    @media(max-width: 768px) {
+        body {
+            background-color: blue;
+        }
+    }*/
+    </style>
+</head>
+
+<body>
+</body>
+
+</html>

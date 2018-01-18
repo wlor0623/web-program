@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视口 -->
+	 <!-- initial-scale=1.0设置初始化缩放为1也就表示不缩放效果等同于设置width=device-width -->
+	 <!-- user-scalable=no 用户不能用手指拖放 no不允许 yes允许
+	  maximum-scale=1.0 设置最大缩放为1 
+	  minimum-scale=1.0 设置最小缩放为1 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- 移动web开发必须加视口 -->
+	<!-- meta:vp + 按tab键 -->
+	<title>Document</title>
+</head>
+<body>
+	<!-- 视口： 浏览器的可视窗口 
+		1. 在PC端视口是会随着窗口大小变化而变化
+		2. 在移动端的视口默认是不会变化 默认是980  但是移动设备的宽度只有300-400在移动设备里面展示的时候就会缩放 字体也会缩放
+		3. 解决移动端视口缩放的问题： 不要默认的980px的视口 让视口的宽度和设备的真实宽度一样就可以-->
+	<p>这是一行文字</p>
+</body>
+</html>

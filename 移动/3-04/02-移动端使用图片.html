@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .box {
+        /*在CSS里面设置的宽度就是真实设备的宽度*/
+        /*所以在CSS或者页面设置图片的大小的时候要缩小一半来设置*/
+        width: 375px;
+        height: 500px;
+        /*background-color: #f40;*/
+    }
+    
+    img:first-of-type {
+        width: 40px;
+    }
+    
+    img:last-of-type {
+        width: 80px;
+    }
+    </style>
+</head>
+
+<body>
+	<!-- 在手机端使用所有图片都需要缩小一半来设置 -->
+	<!-- 所有如图页面需要一个40px宽度的图片 必须要设计个80px的图片才能正常 -->
+	<!-- 一般设计图片会比真实页面看到的大一倍 -->
+    <div class="box">
+        <img src="images/nav0.png" alt="">
+        <img src="images/nav0.png" alt="">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 使用touch事件来模拟单击
+		1. 如果用户只触发了touchstart 和 touchend 没有触发touchmove 就认为的单击操作
+		2. 如果触发了move就是滑动不是单击 -->
+    <div class="box"></div>
+    <script>
+    var box = document.querySelector('.box');
+    // 定义一个变量isMove 表示是否触发了move事件
+    // var isMove = false;
+    // box.addEventListener('touchstart', function() {});
+    // box.addEventListener('touchmove', function() {
+    //     // console.log('touchmove');
+    //     isMove = true;
+    // });
+    // box.addEventListener('touchend', function() {
+    //     if (isMove == false) {
+    //         //没有触发move就是单击事件
+    //         // 执行单击事件需要执行的代码
+    //         console.log('这是移动端的单击事件');
+    //     }
+    //     isMove = false;
+    // });
+
+    function tap(dom, callback) {
+        var isMove = false;
+        dom.addEventListener('touchstart', function() {});
+        dom.addEventListener('touchmove', function() {
+            // console.log('touchmove');
+            isMove = true;
+        });
+        dom.addEventListener('touchend', function(e) {
+            if (isMove == false) {
+                //没有触发move就是单击事件
+                // 执行单击事件需要执行的代码
+                //把当前touchend事件的事件源参数传给回调函数
+                callback(e);
+            }
+            isMove = false;
+        });
+    }
+    tap(box, function(e) {
+        console.log(e.target);
+    })
+    </script>
+</body>
+
+</html>

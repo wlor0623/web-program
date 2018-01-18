@@ -1,0 +1,126 @@
+@import 'base.less';
+#topbar {
+    height: 45px;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: absolute;
+    width: 100%;    
+    .icon-back {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 44px;
+        padding: 12px 10px;
+        background-image: url(../images/sprites.png);
+        background-size: 200px 200px;
+        background-position: -20px 0;
+        /* 改变背景定位的起点（原点）背景从内容地方开始定位 */
+        background-origin: content-box;
+        /* 背景图裁切 只要内容部分的背景图 */
+        background-clip: content-box;
+    }
+    .icon-menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 44px;
+        padding: 12px 10px;
+        background-image: url(../images/sprites.png);
+        background-size: 200px 200px;
+        background-position: -60px 0;
+        background-origin: content-box;
+        background-clip: content-box;
+    }
+    >form {
+        >input {
+            height: 30px;
+            border: 1px solid #ccc;
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+    }
+}
+html,body{
+	height: 100%;	
+}
+/* 主体分类 */
+
+#category{
+	height: 100%;
+	padding-top: 45px;
+	.category-left{
+		width: 100px;
+		float: left;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		>ul{
+			>li{
+				>a{
+					background-color: #eee;
+					width: 100px;
+					height: 50px;
+					line-height: 50px;
+					text-align: center;
+					display: block;
+					border-right: 1px solid #ccc;
+					border-bottom: 1px solid #ccc;
+					color:#666;
+					font-size: 14px;
+				}
+				&.active{
+					>a{
+						color:@main-color;
+						background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.category-right{
+	/* 	不能使用margin-left */
+		margin-left: 100px;
+		padding: 10px;
+		background-color: #eee;
+		/* overflow: hidden; */
+		height: 100%;
+		position: relative;
+		.category-list{
+			.banner{
+				display: block;
+				>img{
+					width: 100%;
+				}
+			}
+			.product{
+				background-color: #fff;
+				>h4{
+					font-weight: normal;
+				}
+				>ul{
+					>li{
+						width: 33.33%;
+						float: left;
+						a{
+							display: block;
+							text-align: center;
+							>img{
+								width: 50px;
+								height: 50px;
+							}
+							p{
+								color:#666;
+								font-size: 12px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

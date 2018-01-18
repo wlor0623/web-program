@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 1. 引入bootstrap css文件 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+    	<!-- 导航条默认使用全屏容器 -->
+        <!-- <div class="container-fluid"> -->
+        <div class="container">
+            <!-- 导航条的头部（放logo和在手机端的折叠菜单） -->
+            <div class="navbar-header">
+            	<!-- button是移动端折叠的按钮
+            	通过data-toggle 指定控制那个JS插件 调用手风琴菜单插件
+            	data-target 指定折叠的内容 传入一个选择器 -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <!-- icon-bar是按钮里面的3个横杠 -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 品牌logo -->
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+            <!-- 导航条身体部分 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            	<!-- 导航条的链接 -->
+                <ul class="nav navbar-nav">
+                		<!-- 每个li就是一个导航条链接 -->
+                		<!-- active是选中高亮的导航条 -->
+                		<!-- sr-only是屏幕阅读器设备使用 -->
+                    <li class="active"><a href="#">我要投资 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">我要借款</a></li>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">新手专区</a></li>
+                    <li><a href="#">最新动态</a></li>
+                    <li><a href="#">微论坛</a></li>
+                    <!-- 下拉框 -->
+                 <!--    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <!-- 导航条的表单 -->
+                <!-- <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form> -->
+                <!-- 右侧导航菜单 -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">个人中心</a></li>
+                   <!--  <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- 2.引入jquery 因为导航条里面有JS插件（手风琴菜单） -->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 3. 引入bootstrap 的JS文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

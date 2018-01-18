@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 1. 引入bootstrap 的CSS文件 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <!-- 4. 先写好网页的基本块结构 -->
+    <!-- 推荐大块使用id限制 id的优先级高 可以把bootstrap 的样式覆盖 -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <!-- 顶部通栏 -->
+        <div class="topbar">
+            <!-- 居中的版心容器 全局CSS样式 》 概述 》 布局容器 -->
+            <div class="container">
+                <!-- 栅格系统 》 全局CSS样式 》 栅格系统 -->
+                <div class="row">
+                    <div class="col-md-2 text-center">
+                        <a href="#" class="text-muted">
+                            <!-- 字体图标 》 组件 》 字体图标 -->
+                            <i class="glyphicon glyphicon-phone"></i> 手机微金所
+                            <i class="glyphicon glyphicon-chevron-down"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <i class="glyphicon glyphicon-earphone"></i>
+                        <span>4006-89-4006（服务时间：9:00-21:00）</span>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <a href="#" class="text-muted">常见问题</a>
+                        <a href="#" class="text-muted">财富登录</a>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <!-- <button></button> -->
+                        <!-- 按钮 》 全局CSS样式 》 按钮  -->
+                        <button type="button" class="btn btn-danger btn-sm">免费注册</button>
+                        <a href="#" class="text-muted">登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 导航条 -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- 轮播图区域 -->
+    <section id="slide"></section>
+    <!-- 支付交易保障区域 -->
+    <section id="safeguard"></section>
+    <!-- 立即预约区域 -->
+    <section id="booking"></section>
+    <!-- 商品区域 -->
+    <section id="products"></section>
+    <!-- 新闻区域 -->
+    <secition id="news"></secition>
+    <!-- 合作伙伴区域 -->
+    <footer id="partner"></footer>
+    <!-- 2. 引入Jquery 因为页面使用到JS插件 JS插件依赖jquery -->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 3. 引入bootstrap的JS文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .row .col {
+        height: 100px;
+        border: 10px solid #ccc;
+        font-size: 30px;
+        text-align: center;
+        line-height: 100px;
+        box-sizing: border-box;
+    }
+    
+    .col {
+        /*width: 50%;*/
+        float: left;
+    }
+    /*需求： 根据不同的屏幕 改变.col列的宽度
+		超小屏幕(手机设备)    768px以下
+		小屏设备(ipad设备)    768px-992px
+		中等屏幕(旧式电脑)    992px-1200px  
+		宽屏设备(现代电脑)    1200px以上
+		中屏幕以上分为3列  .col 33.33%
+		小屏设备分为2列  .col 50%
+		超小屏幕分为1列  .col 100%*/
+    
+    @media(min-width: 992px) {
+        .col {
+            width: 33.33%;
+        }
+    }
+    /*and就相当于JS&& 并且 但是注意and前后必须有空格*/
+    /*@media(条件) and (条件)*/
+    
+    @media(min-width: 768px) and (max-width: 992px) {
+        .col {
+            width: 50%;
+        }
+    }
+    
+    @media(max-width: 768px) {
+        .col {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+    </div>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+    </div>
+</body>
+
+</html>

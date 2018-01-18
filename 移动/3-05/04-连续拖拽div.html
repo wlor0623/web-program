@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .box {
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+        box-sizing: border-box;
+        border: 5px solid #0f0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        位置位置位置位置位置位置位置
+    </div>
+    <script>
+    var box = document.querySelector('.box');
+    // 滑动开始X 滑动开始Y 滑动中的X 滑动中的Y 滑动距离X  滑动距离Y 当前div已经滑动到的X 当前div已经滑动到的Y
+    var startX = startY = moveX = moveY = distanceX = distanceY = currentX = currentY=0;
+    box.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    });
+    box.addEventListener('touchmove', function(e) {
+        // 滑动中的X和Y的值
+        moveX = e.touches[0].clientX;
+        moveY = e.touches[0].clientY;
+        // 滑动的水平的距离
+        distanceX = moveX - startX;
+        // 滑动的垂直距离
+        distanceY = moveY - startY;
+        //把滑动的距离设置到div上
+        box.style.transform = 'translate(' + (currentX+distanceX) + 'px,' + (currentY+distanceY) + 'px)';
+           box.style.transition = 'all 0.5s';
+    });
+    // 实现div的连续拖拽
+    //     1. 在松开的时候记录松开的时候的位置
+    //     2. 在touchend事件里面累计当前松开手的位置
+    //     3. 下一次滑动的时候要加上(上一次记录的位置+当前滑动的距离)
+    box.addEventListener('touchend', function() {
+        // currentX是当前的位置 要累计滑动的距离
+        currentX += distanceX;
+        currentY += distanceY;
+    });
+    </script>
+</body>
+
+</html>

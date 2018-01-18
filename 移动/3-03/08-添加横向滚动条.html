@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 400px;
+        height: 300px;
+        background-color: rgba(0, 0, 0, 0.2);
+        /* 给父元素加上overflw:auto;当子元素的宽度超出了父元素的宽度或者高度自动添加滚动条 */
+        overflow: auto;
+    }
+    
+    .inner {
+        width: 1000px;
+        height: 200px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 父容器 -->
+    <div class="box">
+        <!-- 子容器 -->
+        <div class="inner"></div>
+    </div>
+</body>
+
+</html>

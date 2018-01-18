@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+    var box = document.querySelector('.box');
+    box.addEventListener('touchstart', function() {
+        console.log('touchstart');
+    });
+    box.addEventListener('touchend', function() {
+        console.log('touchend');
+    });
+    // click在移动端有延迟 大概300ms左右的延迟 （不同设备延迟会不一样）
+    // 移动端要兼容双击事件 如果在300ms以内单击了2次就认为双击操作 如果300ms以内只单击了一次才认为是单击操作
+    box.addEventListener('click', function() {
+        console.log('click');
+    });
+    </script>
+</body>
+
+</html>

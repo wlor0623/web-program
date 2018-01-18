@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 	4. 设置样式 
+    	1. 父容器要有具体 宽（水平滑动需要）高(垂直滑动的时候)
+    	2. 子容器是要比容器宽或者高才能滑动
+    	3. 父容器还要设置 overflow: hidden;*/
+    	#wrapper{
+    		height: 200px;
+    		overflow: hidden;
+    	}
+    </style>
+</head>
+
+<body>
+    <!-- 2. 写页面结构 
+		最外层有一个父容器
+		里面有一个子容器
+		子容器里面包含了内容 -->
+    <div id="wrapper">
+        <ul>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+            <li>这是一段文字</li>
+        </ul>
+    </div>
+    <!-- 1. 引包 引入iscroll的JS文件 -->
+    <script src="build/iscroll.js"></script>
+    <script type="text/javascript">
+    var myScroll = new IScroll('#wrapper');
+    </script>
+</body>
+
+</html>

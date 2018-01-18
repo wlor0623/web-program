@@ -1,0 +1,196 @@
+/* 导入文件一般放在最前面 */
+@import 'base.less';
+
+/* 1. 定义变量 */
+
+
+/* 变量名 中间可以有-
+@变量名:变量值; */
+
+@color: rgba(0, 255, 0, 0.3);
+@color1: #fff;
+@color2: yellow;
+body {
+    /* 使用变量  @变量名 */
+    /* background-color: @color; */
+}
+
+.box1 {
+    width: 100px;
+    height: 200px;
+    background-color: @color1;
+    .btbb(3px);
+}
+
+.box2 {
+    height: 200px;
+    width: 200px;
+    .btbb(10px);
+    margin-top: 20px;
+}
+
+
+/* Mixin(JS里面的函数 可以把一些常用的代码封装到函数里面 需要的地方调用就行) */
+
+
+/* 不带参数的函数 */
+
+.btbb {
+    border-top: 1px solid pink;
+    border-bottom: 1px solid pink;
+}
+
+
+/* 带参数的函数 变量和参数都要带@符号  @参数:默认值;*/
+
+.btbb(@num: 1px) {
+    border-top: @num solid pink;
+    border-bottom: @num solid pink;
+}
+
+
+/* 嵌套 */
+
+
+/* css嵌套 */
+
+
+/* 
+.container {
+    width: 1170px;
+    margin: 0px auto;
+}
+
+.container .row {
+    border-bottom: 1px solid #ccc;
+}
+
+.container .row .col-xs-1 {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+ */
+
+
+/* less的嵌套 */
+
+.topbar {
+    .container {
+        width: 1170px;
+        margin: 0px auto;
+        .abc {
+            /* 子元素 */
+            .row {
+                border-bottom: 1px solid #ccc;
+                .col-xs-1 {
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: left;
+                }
+                /* >表示子代不会找孙子 */
+                >div{
+
+                }
+            }
+        }
+    }
+}
+
+.box3 {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #f40;
+    position: relative;
+    /* & 表示box3 也可以表示当前元素 */
+    &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        position: absolute;
+        background-color: yellow;
+        left: 0;
+        top: 0;
+    }
+    &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        position: absolute;
+        background-color: pink;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+
+/* .box3::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: yellow;
+    left: 0;
+    top: 0;
+}
+
+.box3::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: pink;
+    right: 0;
+    bottom: 0;
+}
+ */
+
+a {
+    color: #666;
+    /* &表示当前的a */
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* ul li{
+	list-style: none;
+}
+ul li.active{
+	color:red;
+} */
+/* li,a 并集
+li.active 交集 */
+ul{
+	li{
+		list-style: none;
+		&.active{
+			color:red;
+		}
+	}
+}
+
+/* &符号表示当前元素就和JS的this一样
+通常用在 伪类 伪元素 交集选择器 */
+
+/* 4. 注释 */
+
+// 是less的注释 但是这种注释编译之后会被删除
+
+/* 斜杠星CSS 的注释 这种注释编译后不会删除*/
+
+
+/* 5. 导入 ：可以把多个less文件导入到一个less文件里面 */
+
+/* 导入base.less公共样式文件 */
+/* 导入一个less文件 */
+/* @import less文件路径; */
+@import 'base.less';

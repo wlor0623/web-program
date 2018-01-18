@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    .pcImg {
+        width: 100%;
+        height: 410px;
+        display: block;
+        background-position: center center;
+    }
+    
+    .mobileImg img {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 轮播图容器 -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 轮播图的小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- li是每一个小圆点 -->
+            <!--    data-target指定小圆点要控制的轮播图容器 选择器 只能控制一个轮播图 
+            data-slide-to="0" 指定切换哪一张图 轮播图的索引 从0开始 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- 轮播图的所有轮播图项 -->
+        <div class="carousel-inner" role="listbox">
+            <!-- item代表每一项轮播图 -->
+            <!-- active表示当前正在显示的轮播图 有且只能有一个 -->
+            <!-- data-large-image 当前item需要的大图路径 -->
+            <!-- data-small-image 当前item需要的小图路径 -->
+            <div class="item active" data-large-image="img/slide_01_2000x410.jpg" data-small-image="img/slide_01_640x340.jpg">
+                <!-- 定义一个pcImg的超链接 里面放大图的背景图 -->
+                <!-- 使用响应式工具实现
+                pcImg 在 小 中 大都显示 在超小隐藏
+                mobile 在超小屏幕显示 在 小 中 大都隐藏 -->
+                <!-- 使用响应式工具虽然是隐藏了但是图片还会请求 
+                小 中 大 超小 所有屏幕都会请求两种图片 -->
+            </div>
+            <div class="item" data-large-image="img/slide_02_2000x410.jpg" data-small-image="img/slide_02_640x340.jpg">
+            </div>
+            <div class="item" data-large-image="img/slide_03_2000x410.jpg" data-small-image="img/slide_03_640x340.jpg">
+            </div>
+        </div>
+        <!-- 控制器 左右箭头 -->
+        <!-- 左键头 通过href指定轮播图容器的选择器  data-slide="prev" 切换到上一张-->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <!-- 右箭头 data-slide="next"切换到下一张-->
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $(window).on('resize', function() {
+            //如果把图片路径放到JS数组 维护起来也不太方便
+            // var largeImg = ['img/slide_01_2000x410.jpg','img/slide_02_2000x410.jpg']
+            // 1. 获取屏幕宽度 判断 是大屏还是小屏 以640px条件
+            var windowWidth = $(window).width();
+            if (windowWidth > 640) {
+                //大屏
+                var items = $('.carousel-inner .item');
+                items.each(function(index, value) {
+                    //attr方法需要写全名 包含data-
+                    // var imgSrc = $(value).attr('data-large-image','要设置的值');
+                    // data函数专门用来获取自定义属性属性名不能写data-
+                    // data方法是只能获取不能设置值 要设置值只能用attr
+                    var imgSrc = $(value).data('large-image');
+                    $(value).html('<a href="#" class="pcImg" style="background-image:url('+imgSrc+')"></a>');
+                });
+            } else {
+                //小屏
+                var items = $('.carousel-inner .item');
+                items.each(function(index, value) {
+                    var imgSrc = $(value).data('small-image');
+                    $(value).html('<a href="#" class="mobileImg"> <img src="'+imgSrc+'" alt=""></a>');
+                });
+            }
+        }).trigger('resize');
+    });
+    </script>
+</body>
+
+</html>

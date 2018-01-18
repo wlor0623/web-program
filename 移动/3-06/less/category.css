@@ -1,0 +1,167 @@
+/* 1. 公共样式里面通常放哪些样式： 
+
+- 1. 样式的重置例如清除默认的元素间距 列表项 边框 等等
+- 1. 一些会经常重复使用到的样式 例如浮动 定位 清除浮动 等等
+ */
+/* 京东全局颜色 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /* 设置移动端盒模型 */
+  box-sizing: border-box;
+  /*当按住a标签的时候会有一个蓝色的背景： 高亮颜色*/
+  -webkit-tap-highlight-color: transparent;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input {
+  border: 0;
+  outline: 0;
+}
+img {
+  /* display: block; */
+  /* 解决图片距离父元素底部3px的间隙 */
+  vertical-align: bottom;
+  /* vertical-align: middle; */
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 定义边框公共类 */
+.bt {
+  border-top: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+#topbar {
+  height: 45px;
+  border-bottom: 1px solid #ccc;
+  background-color: #eee;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: absolute;
+  width: 100%;
+}
+#topbar .icon-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 44px;
+  padding: 12px 10px;
+  background-image: url(../images/sprites.png);
+  background-size: 200px 200px;
+  background-position: -20px 0;
+  /* 改变背景定位的起点（原点）背景从内容地方开始定位 */
+  background-origin: content-box;
+  /* 背景图裁切 只要内容部分的背景图 */
+  background-clip: content-box;
+}
+#topbar .icon-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 44px;
+  padding: 12px 10px;
+  background-image: url(../images/sprites.png);
+  background-size: 200px 200px;
+  background-position: -60px 0;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+#topbar > form > input {
+  height: 30px;
+  border: 1px solid #ccc;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+html,
+body {
+  height: 100%;
+}
+/* 主体分类 */
+#category {
+  height: 100%;
+  padding-top: 45px;
+}
+#category .category-left {
+  width: 100px;
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#category .category-left > ul > li > a {
+  background-color: #eee;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  color: #666;
+  font-size: 14px;
+}
+#category .category-left > ul > li.active > a {
+  color: #d8505c;
+  background-color: #fff;
+}
+#category .category-right {
+  /* 	不能使用margin-left */
+  margin-left: 100px;
+  padding: 10px;
+  background-color: #eee;
+  /* overflow: hidden; */
+  height: 100%;
+  position: relative;
+}
+#category .category-right .category-list .banner {
+  display: block;
+}
+#category .category-right .category-list .banner > img {
+  width: 100%;
+}
+#category .category-right .category-list .product {
+  background-color: #fff;
+}
+#category .category-right .category-list .product > h4 {
+  font-weight: normal;
+}
+#category .category-right .category-list .product > ul > li {
+  width: 33.33%;
+  float: left;
+}
+#category .category-right .category-list .product > ul > li a {
+  display: block;
+  text-align: center;
+}
+#category .category-right .category-list .product > ul > li a > img {
+  width: 50px;
+  height: 50px;
+}
+#category .category-right .category-list .product > ul > li a p {
+  color: #666;
+  font-size: 12px;
+}

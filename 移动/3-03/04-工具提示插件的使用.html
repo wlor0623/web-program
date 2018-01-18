@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    button {
+        margin: 100px auto;
+        margin-left: 100px;
+    }
+    </style>
+</head>
+
+<body>
+	 <!-- data-toggle="tooltip" 开启工具提示功能
+	  data-placement="top"  提示的方向
+	  title="Tooltip on top" 提示的内容 -->
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="哈哈哈哈">Tooltip on top</button>
+    <a href="#" data-toggle="tooltip" data-placement="top" title="哈哈哈哈">哈</a>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script>
+    $(function() {
+    	// 初始化工具提示插件
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    </script>
+</body>
+
+</html>

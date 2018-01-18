@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .left {
+        height: 100px;
+        background-color: pink;
+        /*左边的元素要加margin-right:右边盒子的宽度;*/
+        /* 就是为了让左边的元素的宽度少100px只占据 一行-右边的宽度的部分 */
+        /*margin-right: 100px;*/
+    }
+    
+    .right {
+        height: 100px;
+        width: 100px;
+        background-color: rgba(0, 255, 0, 0.3);
+        /*使用浮动 但是右边的元素要写在前面 先浮动 再标准流的元素上去*/
+        /*float: right;*/
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="right"></div>
+        <div class="left">
+            文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+        </div>
+    </div>
+</body>
+
+</html>

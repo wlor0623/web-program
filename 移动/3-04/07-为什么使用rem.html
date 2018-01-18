@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    .nav div {
+        /*width: 128px;*/
+        /*width: 64px;*/
+        width: 2.56rem;
+        height: 2.56rem;
+        font-size: 0.48rem;
+        /*屏幕640px的时候盒子直接的内padding是20px*/
+        padding: 0.2rem;
+        float: left;
+        background-color: pink;
+        border-left: 1px solid #fff;
+        text-align: center;
+    }
+    
+    .nav div img {
+    	/* 如果用rem适配宽高都要设置rem */
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    /*@media (width: 640px){
+			.nav div{
+				width: 128px;
+			}
+		}
+		@media (width: 320px){
+			.nav div{
+				width: 64px;
+			}
+		}*/
+    /*640px屏幕 根元素的字体大小50px 
+		128/50px */
+    /*只要改变根元素的字体大小就能实现网页的自适应*/
+    
+    @media (min-width: 320px) {
+        html {
+            font-size: 25px;
+        }
+    }
+    
+    @media(min-width:375px) {
+        html {
+            font-size: 29.29px;
+        }
+    }
+    
+    @media (min-width: 414px) {
+        html {
+            font-size: 32.34px;
+        }
+    }
+    
+    @media (min-width: 640px) {
+        html {
+            font-size: 50px;
+        }
+    }
+    /* 小的宽度/大的宽度 * 大的字太小 */
+    /*320/640 = 0.5 * 50  25
+		375/640 * 50*/
+    
+    body {
+        font-size: 16px;
+    }
+    /* rem和百分比布局的差异
+		百分比只能控制盒子的宽度的百分比 不能控制内容的字体大小 或者间距之类的样式 只能实现布局缩放不能实现所有内容都一起缩放
+		rem既可以让布局自适应 还可以让内容也自适应 */
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+        <div>
+            <img src="images/nav0.png" alt=""> 导航菜单
+        </div>
+    </div>
+</body>
+
+</html>
