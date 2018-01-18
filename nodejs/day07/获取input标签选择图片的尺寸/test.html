@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <!-- 1.给input标签添加一个onchange事件：一旦选择文件发生变化则会触发   目的：获取选择图片的原始数据 -->
+        <input type="file" id="exampleInputFile" name="icon" onchange=uploadImg(this)>
+        <!-- 2.用一个img标签来接收文件数据  目的：（1）先接收文件数据  （2）通过offsetHeight属性获取宽高 -->
+        <img src="" alt="" id="11111">
+        <p>请上传图片.</p>
+    </form>
+</body>
+
+<script>
+    //选择图片，马上预览
+    function uploadImg(obj) {
+
+        //1.读取文件详细信息
+        var file = obj.files[0];
+
+        console.log(obj);
+        console.log(file);
+        //2.使用FileReader读取文件信息
+        var reader = new FileReader();
+
+        //4.监听读取文件过程方法
+        reader.onloadstart = function (e) {
+            console.log("开始读取....");
+        }
+        reader.onprogress = function (e) {
+            console.log("正在读取中....");
+        }
+        reader.onabort = function (e) {
+            console.log("中断读取....");
+        }
+        reader.onerror = function (e) {
+            console.log("读取异常....");
+        }
+        reader.onload = function (e) {
+            console.log("成功读取....");
+
+            console.log(this.reault);
+            //或者 img.src = this.result;  //e.target == this
+            var img = document.getElementById("11111");
+
+            //将解析的base64字符串赋值给img标签
+            img.src = e.target.result;
+            //5.这里需要异步获取，避免线程延迟
+            setTimeout(function(){
+                window.alert('高度' + img.offsetHeight + '宽度' + img.offsetWidth);
+            },1000);
+
+        }
+        //3.开始读取
+        reader.readAsDataURL(file)
+    }
+</script>
+
+</html>
